@@ -38,7 +38,7 @@ usde = w3.eth.contract( usde_address, abi=usde_abi )
 
 assert w3.to_checksum_address( susde.functions.asset().call() ) == usde_address
 
-outfile = f'data/ethena_staking.csv'
+outfile = f'../data/ethena_staking.csv'
 susde_deploy_block = 18571359
 usde_deploy_block = 18571358
 

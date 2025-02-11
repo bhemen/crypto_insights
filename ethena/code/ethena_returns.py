@@ -30,7 +30,7 @@ w3 = Web3(Web3.HTTPProvider(url))
 
 susde_address = '0x9D39A5DE30e57443BfF2A8307A4256c8797A3497'
 susde = w3.eth.contract( w3.to_checksum_address(susde_address), abi=susde_abi )
-outfile = f'data/ethena_returns.csv'
+outfile = f'../data/ethena_returns.csv'
 susde_deploy_block = 18571359
 step_size = 5000
 
