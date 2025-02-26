@@ -2,14 +2,14 @@ import pandas as pd
 from datetime import datetime
 import matplotlib.pyplot as plt
 
-tokens = [
+all_tokens = [
     "USDe",
     "USDC",
     "USDT"
 ]
 
 all_dfs = {}
-for symbol in tokens:
+for symbol in all_tokens:
     df = pd.read_csv(f"data/{symbol}.csv" )
     df.columns = ['timestamp','price']
     df['date'] = df.timestamp.apply( lambda x: datetime.strptime(x, '%Y-%m-%d') )
@@ -20,7 +20,8 @@ means = { symbol: df.price.mean() for symbol, df in all_dfs.items() }
 
 #################################################
 
-dfs = { symbol: all_dfs[symbol] for symbol in ['USDC','USDT'] }
+tokens = ["USDC"]
+dfs = { symbol: all_dfs[symbol] for symbol in tokens }
 
 plt.figure(figsize=(24, 6))  # Make plot wider
 
@@ -47,12 +48,14 @@ for event, date in events.items():
 plt.xticks(rotation=45, ha='right')
 plt.title( f'Price data for {", ".join(tokens)} from {earliest_date} - {latest_date}')
 plt.legend()
-plt.savefig( "figures/USDC-USDT.png", dpi=1200)
+plt.savefig( f"figures/{'-'.join(tokens)}.png", dpi=1200)
 plt.clf()
 
 #################################################
 
-dfs = { symbol: all_dfs[symbol] for symbol in ['USDe','USDC','USDT'] }
+tokens = all_tokens
+
+dfs = { symbol: all_dfs[symbol] for symbol in tokens }
 min_date = max([df['date'].min() for df in dfs.values()])  # Find the latest of all minimum dates
 dfs = {symbol: df[df['date'] >= min_date] for symbol, df in dfs.items()}  # Truncate all dataframes
 
@@ -65,5 +68,5 @@ for symbol, df in dfs.items():
 plt.xticks(rotation=45, ha='right')
 plt.title( f'Price data for {", ".join(tokens)} from {earliest_date} - {latest_date}')
 plt.legend()
-plt.savefig( "figures/USDe-USDC-USDT.png", dpi=1200)
+plt.savefig( f"figures/{'-'.join(tokens)}.png", dpi=1200)
 plt.clf()
