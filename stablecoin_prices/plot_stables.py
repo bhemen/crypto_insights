@@ -70,3 +70,8 @@ plt.title( f'Price data for {", ".join(tokens)} from {earliest_date} - {latest_d
 plt.legend()
 plt.savefig( f"figures/{'-'.join(tokens)}.png", dpi=1200)
 plt.clf()
+
+#https://institutional.vanguard.com/investments/product-details/fund/0011
+#https://www.nasdaq.com/market-activity/mutual-fund/vusxx/historical
+
+nasdaq_df = pd.read_csv("data/NASDAQ-VUXX.csv")
