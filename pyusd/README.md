@@ -45,6 +45,8 @@ Arkham has some [more information about this address](https://intel.arkm.com/exp
 
 One thing that stands out from both the Etherscan and Arkham is -- Why does this address have mint authority?  It's clearly a Paxos hot wallet.  It would make more sense to have a dedicated minter for PyUSD, and if you wanted, you could mint PyUSD **to** the Paxos hot wallet, but the Paxos wallet should not be doing the minting.
 
+![PyUSD Circulating Supply](figures/total_supply_over_time.png)
+
 # Mitigations
 
 There are many steps that Paxos could have taken to prevent this type error.
