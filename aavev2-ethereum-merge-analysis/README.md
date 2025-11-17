@@ -101,7 +101,7 @@ Due to their large size, the following files are not hosted on GitHub but can be
 - [aave_collateralization_v2.csv](https://upenn.box.com/shared/static/rjgq5fjkmh1blem46c4edibjsfk056jx.csv)
 - [aave_collateralization_meta_v2.csv](https://upenn.box.com/s/rnuz37qc03en2grs6h4xu58n880azu1u)
 
-These files, along with [`aave_atokens_v2.csv`](./data/aave_atokens_v2.csv), are used in the Jupyter notebook `aave_v2_analysis_plots.ipynb`. Please download and place all these files in the data folder for this project before running the notebook.
+These files, along with [`aave_atokens_v2.csv`](https://github.com/bhemen/aave-data/blob/main/data/aave_atokens_v2.csv), are used in the Jupyter notebook `aave_v2_analysis_plots.ipynb`. Please download and place all these files in the data folder for this project before running the notebook.
 
 Further analyses using these larger Aave data sets are available at [https://github.com/bhemen/aave-data](https://github.com/bhemen/aave-data).
 
